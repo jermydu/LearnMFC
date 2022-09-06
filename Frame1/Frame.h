@@ -4,6 +4,19 @@
 using namespace std;
 /**
  * 从零开始模拟MFC程序
+ * 继承结构
+ * |CObject
+ *		|CCmdTarget
+ *			|CWinThread
+ *				|CWinApp
+ *					|MyWinApp
+ *			|CWnd
+ *				|CView
+ *					|MyView
+ *				|CFrameWnd
+ *					|MyFrameWnd
+ *			|CDocument
+ *				|MyDoc
  */
 
 
