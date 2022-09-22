@@ -6,20 +6,7 @@
 
 using namespace std;
 /**
- * 从零开始模拟MFC程序
- * 继承结构
- * |CObject
- *		|CCmdTarget
- *			|CWinThread
- *				|CWinApp
- *					|MyWinApp
- *			|CWnd
- *				|CView
- *					|MyView
- *				|CFrameWnd
- *					|MyFrameWnd
- *			|CDocument
- *				|MyDoc
+* 模拟MFC程序的初始化过程
  */
 
 
@@ -48,7 +35,7 @@ public:
 		cout << "CCmdTarget 析构函数执行了" << endl;
 	}
 };
-	
+
 class CWinThread :public CCmdTarget
 {
 public:
@@ -166,7 +153,7 @@ public:
 		CreateEx();
 		return TRUE;
 	}
-	
+
 	BOOL PreCreateWindow()override
 	{
 		cout << "CFrameWnd::PreCreateWindow()" << endl;
@@ -189,6 +176,3 @@ public:
 
 //全局函数
 CWinApp* AfxGetApp();
-
-
-
