@@ -12,6 +12,7 @@ typedef char* LPSTR;
 #define UINT int
 #define PASCAL _stdcall
 
+//类
 class CObject;
 
 //型录中的类信息
