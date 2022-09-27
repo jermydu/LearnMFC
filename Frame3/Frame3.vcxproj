@@ -140,9 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Frame.h" />
+    <ClInclude Include="MyFrame.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Frame.cpp" />
+    <ClCompile Include="MyFrame.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
