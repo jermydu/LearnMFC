@@ -24,9 +24,9 @@ struct CRuntimeClass
 	CObject* (PASCAL* m_pfnCreateObject)();				//函数指针  指向抽象类
 	CRuntimeClass* m_pBaseClass;						//
 
-	//CRuntimeClass对象链接在简单列表中
-	static CRuntimeClass* pFirstClass;					//链表头
-	CRuntimeClass* m_pNextClass;						//注册类的链表
+	//CRuntimeClass对象链接在链表中
+	static CRuntimeClass* pFirstClass;					//链表头 first 指针 全局变量
+	CRuntimeClass* m_pNextClass;						//链表next指针
 };
 
 #define  DECLARE_DYNAMIC(class_name) \
@@ -54,6 +54,8 @@ struct AFX_CLASSINIT
 		return &class_name::class##class_name;\
 	}
 
+
+//各个CRuntimeClass 对象连接
 #define IMPLEMENT_DYNAMIC(class_name,base_class_name) \
 	_IMPLEMENT_RUNTIMECLASS(class_name,base_class_name,0xFFFF,nullptr)
 
