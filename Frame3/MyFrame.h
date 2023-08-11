@@ -4,6 +4,7 @@
 
 class CMyWinApp : public CWinApp
 {
+	DECLARE_DYNAMIC(CMyWinApp)
 public:
 	CMyWinApp() {};
 	~CMyWinApp() {};
@@ -12,6 +13,7 @@ public:
 
 class CMyFrameWnd : public CFrameWnd
 {
+	DECLARE_DYNAMIC(CMyFrameWnd)
 public:
 	CMyFrameWnd() { Create(); };
 	~CMyFrameWnd() {};
@@ -19,6 +21,7 @@ public:
 
 class CMyDoc : public CDocument
 {
+	DECLARE_DYNAMIC(CMyDoc)
 public:
 	CMyDoc() {};
 	~CMyDoc() {};
@@ -26,6 +29,7 @@ public:
 
 class CMyView : public CView
 {
+	DECLARE_DYNAMIC(CMyView)
 public:
 	CMyView() {};
 	~CMyView() {};

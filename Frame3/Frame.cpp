@@ -22,6 +22,19 @@ CRuntimeClass* CObject::GetRuntimeClass() const
 	return &CObject::classCObject;
 }
 
+BOOL CObject::IsKindOf(const CRuntimeClass* pClass)const
+{
+	//循着链表 向上查找
+	CRuntimeClass* pClassThis = GetRuntimeClass();
+	while (pClassThis != nullptr)
+	{
+		if (pClassThis == pClass)
+			return TRUE;
+		pClassThis = pClassThis->m_pBaseClass;
+	}
+	return FALSE;
+}
+
 BOOL CWnd::Create()
 {
 	return TRUE;

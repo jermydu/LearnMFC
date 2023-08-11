@@ -29,6 +29,7 @@ struct CRuntimeClass
 	CRuntimeClass* m_pNextClass;						//链表next指针
 };
 
+//CRuntimeClass 对象和获取对象地址的函数
 #define  DECLARE_DYNAMIC(class_name) \
 public:	\
 	static CRuntimeClass class##class_name;	\
@@ -68,6 +69,8 @@ public:
 	~CObject() {};
 	virtual CRuntimeClass* GetRuntimeClass() const;
 	static CRuntimeClass classCObject;
+
+	BOOL  IsKindOf(const CRuntimeClass* pClass)const;
 };
 
 class CCmdTarget : public CObject
