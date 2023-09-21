@@ -27,7 +27,12 @@ BOOL CMyWinApp::OnIdle(LONG lCount)
 CMyFrameWnd::CMyFrameWnd()
 {
 	//创建菜单 MainMenu 定义与 rc 文件 
-	Create(NULL,("Hello MFC"),WS_OVERLAPPEDWINDOW,rectDefault,NULL,("MainMenu"));
+	Create(NULL, //窗口类
+		("Hello MFC"),//窗口名称
+		WS_OVERLAPPEDWINDOW,//窗口风格
+		rectDefault,		//窗口位置大小
+		NULL,				//父窗口
+		("MainMenu"));		//指定菜单 "MainMenu" RC中定义
 }
 
 BEGIN_MESSAGE_MAP(CMyFrameWnd,CFrameWnd)
@@ -69,6 +74,6 @@ void CMyFrameWnd::IdleTimeHander(LONG lCount)
 	CRect rt(10,10,200,30);
 	CDC* pDc = new CClientDC(this);
 
-	str.Format(("%d"), lCount);
+	str.Format(("%010d"), lCount);
 	pDc->DrawText(str,&rt,DT_LEFT | DT_TOP);
 }
